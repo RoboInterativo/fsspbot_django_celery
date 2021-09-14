@@ -20,7 +20,7 @@ def webhook_status(request):
     method='getWebhookInfo'
     url=f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}'
     r=requests.get(url)
-    return HttpResponse(r.json())
+    return HttpResponse(r.text())
 
 def index (request):
 
