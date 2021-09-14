@@ -9,13 +9,18 @@ import datetime
 import requests
 
 # Create your views here.
+with open('/home/django/config.yml') as f:
+    config=yaml.safe_load(f)
+
+TELEGRAM_TOKEN= config.get('TELEGRAM_TOKEN')
+
 
 def webhook_status(request):
     method='getWebhookInfo'
     url=f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}'
     r=requests.get(url)
     return HttpResponse(r.json())
-    
+
 def index (request):
 
     # p = Food.objects.all()
