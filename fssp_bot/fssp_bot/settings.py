@@ -26,7 +26,13 @@ SECRET_KEY = 'django-insecure-@gtpno0ujn#l_1c20*(9!=u+*f_mfrh$!-e&ez5!(es^0fo5p-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+with open('/home/django/config.yml') as f:
+    config=yaml.safe_load(f)
+DATABASE=config.get('DATABASE')
+DB_USER=config.get('DB_USER')
+DB_PASSWORD=config.get('DB_PASSWORD')
+
+ALLOWED_HOSTS = config.get('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -70,11 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fssp_bot.wsgi.application'
 
-with open('/home/django/config.yml') as f:
-    config=yaml.safe_load(f)
-DATABASE=config.get('DATABASE')
-DB_USER=config.get('DB_USER')
-DB_PASSWORD=config.get('DB_PASSWORD')
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
