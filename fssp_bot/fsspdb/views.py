@@ -7,6 +7,7 @@ from django.template import Context, Template
 from .models import *
 import datetime
 import requests
+import yaml
 
 # Create your views here.
 with open('/home/django/config.yml') as f:
