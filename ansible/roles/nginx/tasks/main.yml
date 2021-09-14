@@ -1,0 +1,13 @@
+---
+- name: Get OS type
+  debug:
+    var: ansible_facts.distribution
+
+- name: Install package with multiple repos enabled
+  yum:
+    name: epel-release
+    state: latest
+- name: Install package with multiple repos enabled
+  yum:
+    name: nginx
+    state: latest

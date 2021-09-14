@@ -38,6 +38,7 @@ ALLOWED_HOSTS = config.get('ALLOWED_HOSTS')
 # Application definition
 
 INSTALLED_APPS = [
+    'fsspdb',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

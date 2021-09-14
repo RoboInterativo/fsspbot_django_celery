@@ -1,7 +1,10 @@
-- hosts: localhost
-  tasks:
-  - name: Update repositories cache and install  package
-    apt:
-      name: virtualbox
-      update_cache: yes
+- hosts: web
 
+  roles:
+    - name: Install consul agents
+      role: nginx
+  # tasks:
+  # - name: Update repositories cache and install  package
+  #   apt:
+  #     name: virtualbox
+  #     update_cache: yes

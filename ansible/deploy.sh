@@ -1,2 +1,4 @@
 #!/bin/bash
-ansible-playbook --key-file ~/projects/myssh -u root  -vv -i  inventories/dev-stage/dyn.py  $1.yml
+ansible-playbook -u root  -vv -i  inventories/dev/hosts  $1
+
+#--key-file ~/projects/myssh 
