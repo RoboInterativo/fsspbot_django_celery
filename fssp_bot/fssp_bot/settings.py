@@ -33,7 +33,7 @@ DB_USER=config.get('DB_USER')
 DB_PASSWORD=config.get('DB_PASSWORD')
 
 ALLOWED_HOSTS = config.get('ALLOWED_HOSTS')
-
+TELEGRAM_TOKEN= config.get('TELEGRAM_TOKEN')
 
 # Application definition
 
