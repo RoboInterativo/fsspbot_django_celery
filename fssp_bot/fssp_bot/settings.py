@@ -80,7 +80,7 @@ DB_PASSWORD=config.get('DB_PASSWORD')
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME': 'DATABASE,
+'NAME': DATABASE,
 'USER' : DB_USER,
 'PASSWORD' : DB_PASSWORD,
 'HOST' : '127.0.0.1',
