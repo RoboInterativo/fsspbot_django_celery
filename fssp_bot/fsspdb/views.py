@@ -10,11 +10,12 @@ import requests
 
 # Create your views here.
 
-def webhook_status():
+def webhook_status(request):
     method='getWebhookInfo'
     url=f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}'
     r=requests.get(url)
     return HttpResponse(r.json())
+    
 def index (request):
 
     # p = Food.objects.all()
