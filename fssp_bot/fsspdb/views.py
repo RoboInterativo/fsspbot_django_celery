@@ -6,9 +6,15 @@ from django.template.loader import get_template
 from django.template import Context, Template
 from .models import *
 import datetime
+import requests
 
 # Create your views here.
 
+def webhook_status():
+    method='getWebhookInfo'
+    url=f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/{method}'
+    r=requests.get(url)
+    return HttpResponse(r.json())
 def index (request):
 
     # p = Food.objects.all()
